@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xsl:stylesheet xmlns:xsl="https://w3.org/1999/XSL/Transform" version="1.0">
+
+<xsl:strip-space elements="*" /> <!-- Elimina els espais en blanc dels elements -->
+
+    <xsl:template match="/">
+        <html>
+            <body>
+                <h1>
+                    <xsl:value-of select="secondary-school/name"></xsl:value-of>
+                </h1>
+                <xsl:apply-templates />
+            </body>
+        </html>
+    </xsl:template>
+
+    <xsl:template match="secondary-school/name"></xsl:template> <!-- Evita el node-->
+
+    <xsl:template match="web"></xsl:template>   <!-- Evita el node-->
+
+    <xsl:template match="cycle/name">
+        <p>
+            <xsl:value-of select="." />
+        </p>
+    </xsl:template>
+
+    <xsl:template match="cycle/grade"></xsl:template>   <!-- Evita el node-->
+</xsl:stylesheet>
+ 
